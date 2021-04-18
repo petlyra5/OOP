@@ -72,11 +72,13 @@ export default class MainSlider extends Slider {
     }
 
     render() {
-        try{
-            this.hanson = document.querySelector('.hanson');
-        }catch(e){}
-
-        this.showSlides(this.slideIndex);
-        this.bindTriggers();
+        if (this.container) {
+            try {
+                this.hanson = document.querySelector('.hanson');
+            } catch(e){}
+    
+            this.showSlides(this.slideIndex);
+            this.bindTriggers();
+        }
     }
 }
